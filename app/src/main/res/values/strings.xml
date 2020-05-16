@@ -23,4 +23,7 @@
     <string name="switchcoreon">Switch ON</string>
     <string name="switchcoreoff">Switch OFF</string>
     <string name="progress_bar_message">Processed %1d%% (block height %2d)</string>
+    <string name="bitcoin_p2p">bitcoin-p2p:</string>
+    <string name="synchronization_progress">synchronization progress:</string>
+    <string name="qrcode">qrcode</string>
 </resources>

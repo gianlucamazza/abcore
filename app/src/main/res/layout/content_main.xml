@@ -5,118 +5,121 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="25dp">
+                <TextView
+                    android:id="@+id/textViewDaemon"
+                    android:paddingTop="5dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/textViewDaemon"
-            android:paddingTop="5dp"
-            android:paddingLeft="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/textViewStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp" />
 
-        <TextView
-            android:id="@+id/textViewStatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingTop="5dp"/>
-
-        <Switch
-            android:id="@+id/switchCore"
-            android:paddingLeft="16dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:theme="@style/AppTheme.Switch"/>
-
-        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:layout_width="350dp"
-            android:layout_height="90dp"
-            android:layout_gravity="center"
-            android:paddingLeft="16dp"
-            app:cardUseCompatPadding="true"
-            app:contentPadding="10dp"
-            card_view:cardCornerRadius="10dp">
-
+                <Switch
+                    android:id="@+id/switchCore"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/AppTheme.Switch"/>
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="350dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="10dp"
+                    card_view:cardCornerRadius="10dp">
 
-                <TextView
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/synchronization_progress"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <TextView
+                            android:id="@+id/textViewSyncBlock"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBarSyncBlock"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:indeterminate="false"
+                            android:progress="0" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="synchronization progress:"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:clipToPadding="false"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="10dp"
+                    card_view:cardCornerRadius="10dp">
 
-                <TextView
-                    android:id="@+id/textViewSyncBlock"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                <ProgressBar
-                    android:id="@+id/progressBarSyncBlock"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:indeterminate="false"
-                    android:progress="0" />
+                        <TextView
+                            android:layout_width="320dp"
+                            android:text="@string/bitcoin_p2p"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_height="wrap_content" />
 
+                        <TextView
+                            android:id="@+id/textViewQr"
+                            android:layout_width="320dp"
+                            android:layout_height="wrap_content" />
+
+
+                        <ImageView
+                            android:id="@+id/qrcodeImageView"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/qrcode" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:layout_width="350dp"
-            android:layout_height="420dp"
-            android:layout_gravity="center"
-            android:clipToPadding="false"
-            android:paddingLeft="16dp"
-            app:cardUseCompatPadding="true"
-            app:contentPadding="10dp"
-            card_view:cardCornerRadius="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="320dp"
-                    android:text="bitcoin-p2p:"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true" />
-
-                <TextView
-                    android:id="@+id/textViewQr"
-                    android:layout_width="320dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true" />
-
-
-                <ImageView
-                    android:id="@+id/qrcodeImageView"
-                    android:layout_width="316dp"
-                    android:layout_height="358dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_gravity="center" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 </ScrollView>
